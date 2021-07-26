@@ -1,0 +1,12 @@
+ordinalslist=['επόμεν', 'ερχόμεν', 'προηγούμεν'
+
+              ]
+endingslist=['ος', 'ου', 'η', 'ης', 'ο', 'οι', 'ων', 'ους', 'α', 'ες']
+
+
+
+combinelist= [(i+k) for i in ordinalslist for k in endingslist]
+
+with open('C:/Users/30699/Downloads/Affixestext.txt', 'w', encoding="utf=8") as f:
+    for i in combinelist:
+        f.write('<item>' + ' ' + i + ' ' + '<tag><![CDATA[GENERIC_ORDER = " "]]></tag></item>' + "\n")
