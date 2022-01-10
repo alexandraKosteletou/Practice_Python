@@ -1,0 +1,17 @@
+# create inflected forms of adjectives
+# iterate through two list and add suffix string to root_form string
+# write adjective strings to .txt file ---each in different line
+
+#list of string root forms of adjectives
+adjective_root=['επόμεν', 'ερχόμεν', 'προηγούμεν']
+
+#list of suffixes strings
+suffixes=['ος', 'ου', 'η', 'ης', 'ο', 'οι', 'ων', 'ους', 'α', 'ες']
+
+#add suffix string and root string  --   list comprehension 
+adjective_full_form= [(root+suf) for root in adjective_root for suf in suffixes]
+
+#write in file 
+with open('Adjectives_Creator.txt', 'w', encoding="utf=8") as f:
+    for item in adjective_full_form:
+        f.write(item + "\n")
